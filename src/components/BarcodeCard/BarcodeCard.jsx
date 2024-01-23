@@ -1,7 +1,7 @@
 import scss from "./BarcodeCard.module.scss";
 
-const BarcodeCard = () => {
-  return <div className={scss.barcodeCard}>BarcodeCard</div>;
+const BarcodeCard = ({ barcode }) => {
+  return <div className={scss.barcodeCard}>{barcode}</div>;
 };
 
 export default BarcodeCard;

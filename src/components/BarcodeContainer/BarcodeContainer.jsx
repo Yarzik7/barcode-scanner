@@ -1,10 +1,10 @@
 import BarcodeCard from "../BarcodeCard/BarcodeCard";
 import scss from "./BarcodeContainer.module.scss";
 
-const BarcodeContainer = () => {
+const BarcodeContainer = ({barcode}) => {
   return (
     <div className={scss.barcodeContainer}>
-      <BarcodeCard />
+      <BarcodeCard barcode={barcode} />
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import Scanner from "../Scanner/Scanner";
 import scss from "./MediaContainer.module.scss";
 
-const MediaContainer = () => {
+const MediaContainer = ({ onSetBarcode }) => {
   return (
     <div className={scss.mediaContainer}>
-      <Scanner />
+      <Scanner onSetBarcode={onSetBarcode} />
     </div>
   );
 };

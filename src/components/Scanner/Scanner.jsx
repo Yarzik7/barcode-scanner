@@ -1,6 +1,9 @@
+"use client";
 import scss from "./Scanner.module.scss";
+import { useQuaggaScanner } from "@/hooks";
 
-const Scanner = () => {
+const Scanner = ({ onSetBarcode }) => {
+  useQuaggaScanner(onSetBarcode);
   return (
     <div id="scanner-container" className={scss.scanner}>
       <div className={scss.scanOverlay}></div>
