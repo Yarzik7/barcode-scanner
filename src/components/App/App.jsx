@@ -10,7 +10,7 @@ const App = () => {
   return (
     <Section className={scss.appSection} containerClassName={scss.appContainer}>
       <MediaContainer onSetBarcode={setBarcode} />
-      <BarcodeContainer />
+      <BarcodeContainer barcode={barcode}/>
     </Section>
   );
 };
