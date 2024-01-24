@@ -1,6 +1,4 @@
 import App from "@/components/App/App";
-import MediaContainer from "@/components/MediaContainer/MediaContainer";
-import BarcodeContainer from "@/components/BarcodeContainer/BarcodeContainer";
 import styles from "./page.module.css";
 
 export default function Home() {

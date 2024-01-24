@@ -1,10 +1,13 @@
-import { classNameJoin } from '@/utils'
-import scss from './ControlPanel.module.scss'
+import Button from "../Button/Button";
+import { classNameJoin } from "@/utils";
+import scss from "./ControlPanel.module.scss";
 
-const ControlPanel = ({className}) => {
+const ControlPanel = ({ className }) => {
   return (
-    <div className={classNameJoin(scss.controlPanel, className)}>ControlPanel</div>
-  )
-}
+    <div className={classNameJoin(scss.controlPanel, className)}>
+      <Button>S</Button>
+    </div>
+  );
+};
 
-export default ControlPanel
+export default ControlPanel;
