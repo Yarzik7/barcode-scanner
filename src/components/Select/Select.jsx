@@ -20,7 +20,12 @@ const Select = () => {
       <span className={scss.chevron} onClick={onToggleShowOptionList}>
         ^
       </span>
-      {showOptionList && <SelectOptionList setSelect={setSelect} />}
+      {showOptionList && (
+        <SelectOptionList
+          setSelect={setSelect}
+          onClick={onToggleShowOptionList}
+        />
+      )}
     </div>
   );
 };
