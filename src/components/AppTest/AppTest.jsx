@@ -1,10 +1,10 @@
 import Select from "../Select/Select";
 import scss from "./AppTest.module.scss";
 
-const AppTest = () => {
+const AppTest = ({ deviceId, deviceName,onSetScannDevice }) => {
   return (
     <div className={scss.appTest}>
-      <Select />
+          <Select deviceName={deviceName} deviceId={deviceId} onSetScannDevice={onSetScannDevice} />
     </div>
   );
 };

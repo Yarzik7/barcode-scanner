@@ -8,12 +8,23 @@ import styles from "./page.module.css";
 
 export default function Home() {
   const [deviceId, setDeviceId] = useState("");
+  const [deviceName, setDeviceName] = useState("");
+
+  const onSetScannDevice = (deviceId, deviceName) => {
+    setDeviceId(deviceId);
+    setDeviceName(deviceName);
+  };
+
   return (
     <>
-      <Header />
+      <Header onSetScannDevice={onSetScannDevice} />
       <main className={styles.main}>
         {/* <App /> */}
-        <AppTest />
+        {/* <AppTest
+          deviceId={deviceId}
+          deviceName={deviceName}
+          onSetScannDevice={onSetScannDevice}
+        /> */}
       </main>
       <ControlPanel />
     </>

@@ -105,6 +105,10 @@ main {
   height: calc(100vh - 100px);
 }
 
+button {
+  cursor: pointer;
+}
+
 #scanner-container video {
   position: absolute;
   top: 0;
