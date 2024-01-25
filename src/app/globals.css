@@ -96,6 +96,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+ul {
+  list-style: none;
+}
+
 main {
   width: 100%;
   height: calc(100vh - 100px);
