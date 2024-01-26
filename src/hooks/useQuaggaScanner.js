@@ -8,7 +8,7 @@ export const useQuaggaScanner = (deviceId, onSetBarcode) => {
         inputStream: {
           name: "Live",
           type: "LiveStream",
-          target: document.querySelector("#scanner-container"),
+          target: document.getElementById("scanner-container"),
           constraints: {
             width: 640,
             height: 480,
@@ -35,6 +35,8 @@ export const useQuaggaScanner = (deviceId, onSetBarcode) => {
         Quagga.start();
       }
     );
+
+    Quagga.onProcessed((res) => console.log("scanning: ", res));
 
     Quagga.onDetected((result) => {
       onSetBarcode(result.codeResult.code);

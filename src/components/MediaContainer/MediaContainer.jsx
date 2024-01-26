@@ -1,4 +1,11 @@
-import Scanner from "../Scanner/Scanner";
+// import Scanner from "../Scanner/Scanner";
+import dynamic from "next/dynamic";
+const Scanner = dynamic(
+  () => {
+    return import("../Scanner/Scanner");
+  },
+  { ssr: false }
+);
 import scss from "./MediaContainer.module.scss";
 
 const MediaContainer = ({ isStartScann, deviceId, onSetBarcode }) => {
