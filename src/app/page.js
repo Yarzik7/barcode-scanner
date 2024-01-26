@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <Header onSetScannDevice={onSetScannDevice} />
+      <Header onSetScannDevice={onSetScannDevice} deviceName={deviceName} />
       <main className={styles.main}>
         {/* <App /> */}
         {/* <AppTest
