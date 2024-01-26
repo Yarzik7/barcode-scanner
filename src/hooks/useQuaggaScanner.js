@@ -37,10 +37,7 @@ export const useQuaggaScanner = (deviceId, onSetBarcode) => {
     );
 
     Quagga.onDetected((result) => {
-      // Обробка знайденого штрихкоду
-      // setBarcode(result.codeResult.code);
       onSetBarcode(result.codeResult.code);
-      // Quagga.stop();
     });
 
     return () => {

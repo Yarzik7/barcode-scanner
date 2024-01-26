@@ -8,11 +8,6 @@ const SideBar = ({ deviceName, onSetScannDevice }) => {
   useEffect(() => {
     const getVideoDevices = async () => {
       const res = await navigator.mediaDevices.enumerateDevices();
-      //   const vdev = await navigator.mediaDevices.getUserMedia({
-      //     video: true,
-      //     audio: true,
-      //   });
-      //   console.log(vdev.getVideoTracks()[0].getSettings());
       setVideoDevicesList(res.filter(({ kind }) => kind === "videoinput"));
     };
 
