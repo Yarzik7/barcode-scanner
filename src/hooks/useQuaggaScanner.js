@@ -1,16 +1,8 @@
-"use client";
 import Quagga from "quagga";
 import { useEffect } from "react";
 
-export const useQuaggaScanner = (onSetBarcode) => {
+export const useQuaggaScanner = (deviceId, onSetBarcode) => {
   useEffect(() => {
-    const getVideoDevices = async () => {
-      const devList = await navigator.mediaDevices
-        .enumerateDevices()
-        .then((devices) => devices.filter(({ kind }) => kind === "videoinput"));
-      return devList;
-    };
-
     Quagga.init(
       {
         inputStream: {
@@ -21,7 +13,7 @@ export const useQuaggaScanner = (onSetBarcode) => {
             width: 640,
             height: 480,
             facingMode: "environment", // вибір тилової камери
-            deviceId: getVideoDevices()[2]?.deviceId, // e8901f74866f821db235ea2907f2691e017fb990b324707b4f803bc3d545281d e50a135e883ac85ff6307e1efa2c90a15d65f60f2b6ea1eb47dfcd5006f6dc14
+            deviceId,
           },
           area: {
             top: "0%",
@@ -54,7 +46,7 @@ export const useQuaggaScanner = (onSetBarcode) => {
     return () => {
       Quagga.stop();
     };
-  }, [onSetBarcode]);
+  }, [deviceId, onSetBarcode]);
 };
 
 export default useQuaggaScanner;

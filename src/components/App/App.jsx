@@ -5,12 +5,12 @@ import BarcodeContainer from "../BarcodeContainer/BarcodeContainer";
 import { useState } from "react";
 import scss from "./App.module.scss";
 
-const App = () => {
+const App = ({ deviceId }) => {
   const [barcode, setBarcode] = useState("");
   return (
     <Section className={scss.appSection} containerClassName={scss.appContainer}>
-      <MediaContainer onSetBarcode={setBarcode} />
-      <BarcodeContainer barcode={barcode}/>
+      <MediaContainer onSetBarcode={setBarcode} deviceId={deviceId} />
+      <BarcodeContainer barcode={barcode} />
     </Section>
   );
 };

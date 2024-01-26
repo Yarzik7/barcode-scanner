@@ -3,13 +3,18 @@ import SelectOptionList from "./SelectOptionList/SelectOptionList";
 import { useState } from "react";
 import scss from "./Select.module.scss";
 
-let devicesList;
-(async () => {
-  const res = await navigator.mediaDevices.enumerateDevices();
-  devicesList = res.filter(({ kind }) => kind === "videoinput");
-})();
+// let devicesList;
+// (async () => {
+//   const res = await navigator.mediaDevices.enumerateDevices();
+//   devicesList = res.filter(({ kind }) => kind === "videoinput");
+// })();
 
-const Select = ({ deviceName, deviceId, onSetScannDevice }) => {
+const Select = ({
+  videoDevicesList,
+  deviceName,
+  deviceId,
+  onSetScannDevice,
+}) => {
   const [showOptionList, setShowOptionList] = useState(false);
   const onToggleShowOptionList = () => setShowOptionList(!showOptionList);
   return (
@@ -29,7 +34,7 @@ const Select = ({ deviceName, deviceId, onSetScannDevice }) => {
         <SelectOptionList
           setSelect={onSetScannDevice}
           onClick={onToggleShowOptionList}
-          list={devicesList}
+          list={videoDevicesList}
         />
       )}
     </div>
