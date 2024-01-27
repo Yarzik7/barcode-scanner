@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import Section from "../Section/Section";
 import MediaContainer from "../MediaContainer/MediaContainer";
 import BarcodeContainer from "../BarcodeContainer/BarcodeContainer";

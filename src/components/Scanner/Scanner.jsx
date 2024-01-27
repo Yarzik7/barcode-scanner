@@ -1,5 +1,3 @@
-"use client";
-
 import scss from "./Scanner.module.scss";
 import { useQuaggaScanner } from "@/hooks";
 

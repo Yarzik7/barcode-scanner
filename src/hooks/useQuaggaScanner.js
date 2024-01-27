@@ -12,7 +12,7 @@ export const useQuaggaScanner = (deviceId, onSetBarcode) => {
           constraints: {
             width: 640,
             height: 480,
-            facingMode: "environment", // вибір тилової камери
+            facingMode: "environment",
             deviceId,
           },
           area: {
@@ -28,15 +28,12 @@ export const useQuaggaScanner = (deviceId, onSetBarcode) => {
       },
       function (err) {
         if (err) {
-          console.error(err);
+          console.error("Помилка) ", err);
           return;
         }
-
         Quagga.start();
       }
     );
-
-    Quagga.onProcessed((res) => console.log("scanning: ", res));
 
     Quagga.onDetected((result) => {
       onSetBarcode(result.codeResult.code);
